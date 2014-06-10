@@ -628,7 +628,11 @@
   #endif
 
   #define TEMP_0_PIN         13   // ANALOG NUMBERING
-  #define TEMP_1_PIN         15   // ANALOG NUMBERING
+// KS: no second extruder
+  #define TEMP_1_PIN         -1   // ANALOG NUMBERING
+//  #define TEMP_1_PIN         15   // ANALOG NUMBERING
+  #define TEMP_2_PIN         -1   // ANALOG NUMBERING
+//  #define TEMP_1_PIN         15   // ANALOG NUMBERING
   #if MOTHERBOARD == 68
     #define TEMP_2_PIN         12   // ANALOG NUMBERING
     #define TEMP_3_PIN         11   // ANALOG NUMBERING
@@ -2803,5 +2807,10 @@ DaveX plan for Teensylu/printrboard-type pinouts (ref teensylu & sprinter) for a
                         HEATER_BED_PIN, FAN_PIN,                  \
                         _E0_PINS _E1_PINS _E2_PINS             \
                         analogInputToDigitalPin(TEMP_0_PIN), analogInputToDigitalPin(TEMP_1_PIN), analogInputToDigitalPin(TEMP_2_PIN), analogInputToDigitalPin(TEMP_BED_PIN) }
+
+// KS we have Y enstop on the front side
+// #define Y_MIN_PIN          -1
+// #define Y_MAX_PIN          14
+
 #endif
 
